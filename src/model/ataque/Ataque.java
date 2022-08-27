@@ -1,4 +1,8 @@
-public class Ataque {
+package model.ataque;
+
+import model.chimpos.Chinpokomon;
+
+public abstract class Ataque {
     private Integer danio;
     private String nombre;
 
@@ -22,7 +26,6 @@ public class Ataque {
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    public void atacar(Chinpokomon chipo){
-        chipo.setVida(chipo.getVida() - getDanio());
-    }
+
+    public abstract void atacar(Chinpokomon chipo);
 }
