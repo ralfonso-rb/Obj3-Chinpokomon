@@ -1,3 +1,5 @@
+package model.referi;
+
 import model.batalla.Batalla;
 
 public class Referi {
