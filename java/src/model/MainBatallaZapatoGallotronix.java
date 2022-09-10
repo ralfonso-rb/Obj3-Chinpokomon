@@ -1,6 +1,8 @@
+package model;
 import model.batalla.Batalla;
 import model.chimpos.Gallotronix;
 import model.chimpos.Zapato;
+import model.referi.Referi;
 
 public class MainBatallaZapatoGallotronix {
 
@@ -8,7 +10,8 @@ public class MainBatallaZapatoGallotronix {
         Zapato zapato = new Zapato("Zapato", 5);
         Gallotronix gallotronix = new Gallotronix("Gallotronix", 5);
         Batalla batalla = new Batalla(zapato, gallotronix);
-        batalla.comenzarBatalla();
+        Referi referi = new Referi(batalla);
+        referi.gestionarBatalla();
     }
 
 }
