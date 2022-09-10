@@ -1,6 +1,5 @@
 package model.chimpos;
 
-import enums.TipoChinpokomon;
 import model.ataque.Ataque;
 
 import java.util.ArrayList;
@@ -12,15 +11,13 @@ public abstract class Chinpokomon {
     Integer nivel;
     Integer vida;
     List<Ataque> ataques = new ArrayList<Ataque>();
-    TipoChinpokomon tipo;
     Chinpokomon oponente = null;
 
-    public Chinpokomon(String nombre, Integer nivel, Integer vida, List<Ataque> ataques, TipoChinpokomon tipo) {
+    public Chinpokomon(String nombre, Integer nivel, Integer vida, List<Ataque> ataques) {
         this.nombre = nombre;
         this.nivel = nivel;
         this.vida = vida;
         this.ataques = ataques;
-        this.tipo = tipo;
     }
 
     public String getNombre() {
@@ -47,10 +44,14 @@ public abstract class Chinpokomon {
         this.vida = vida;
     }
 
-    public TipoChinpokomon getTipo() {return tipo;}
-
-    public void setTipo(TipoChinpokomon tipo) { this.tipo = tipo; }
-
+    public void atacar(Chinpokomon chipo) {
+        Random random = new Random();
+        Ataque arma = ataques.get(random.nextInt(ataques.size()));
+        if(!this.estaMuerto()) {
+            System.out.println(this.getNombre() + " ataca con " + arma.getNombre());
+            arma.atacar(chipo);
+        }
+    }
 
     public List<Ataque> getAtaques() {
         return ataques;
@@ -66,15 +67,6 @@ public abstract class Chinpokomon {
 
     public void setOponente(Chinpokomon oponente) {
         this.oponente = oponente;
-    }
-
-    public void atacar(Chinpokomon chipo) {
-        Random random = new Random();
-        Ataque arma = ataques.get(random.nextInt(ataques.size()));
-        if(!this.estaMuerto()) {
-            System.out.println(this.getNombre() + " ataca con " + arma.getNombre());
-            arma.atacar(chipo);
-        }
     }
 
     public void agregarAtaque(Ataque ataque) {
@@ -98,12 +90,6 @@ public abstract class Chinpokomon {
     public void agregarVida(Integer vida) {
         this.setVida(this.getVida() + vida);
         System.out.println(this.getNombre() + " recibio vida " + vida + ", le queda " + this.getVida() + " de vida");
-    }
-
-    public boolean tieneVentajaSobre(Chinpokomon chipo) {
-        return this.getTipo() == TipoChinpokomon.ROBOT && chipo.getTipo() == TipoChinpokomon.ANIMAL ||
-                this.getTipo() == TipoChinpokomon.ANIMAL && chipo.getTipo() == TipoChinpokomon.COSA ||
-                this.getTipo() == TipoChinpokomon.COSA && chipo.getTipo() == TipoChinpokomon.ROBOT;
     }
 
 }

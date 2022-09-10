@@ -5,12 +5,11 @@ import model.chimpos.Chinpokomon;
 public class CañonConico extends Ataque {
 
     public CañonConico() {
-        super(4, "Cañón Cónico", 1);
+        super(4, "Cañón Cónico");
     }
 
     @Override
-    public void atacar(Chinpokomon chipo, Integer valor) {
-        chipo.recibirDanio(valor);
+    public void atacar(Chinpokomon chipo) {
+        chipo.recibirDanio(this.getDanio());
     }
-
 }

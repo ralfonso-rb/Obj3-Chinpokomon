@@ -5,12 +5,12 @@ import model.chimpos.Chinpokomon;
 public class PomadaWassington extends Ataque {
 
     public PomadaWassington(String nombre) {
-        super(5, nombre, 1);
+        super(0, nombre);
     }
 
     @Override
-    public void atacar(Chinpokomon chipo, Integer valor) {
-        chipo.getOponente().agregarVida(valor);
+    public void atacar(Chinpokomon chipo) {
+        chipo.getOponente().agregarVida(5);
     }
 
 }
