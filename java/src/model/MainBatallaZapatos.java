@@ -9,7 +9,8 @@ public class MainBatallaZapatos {
         Zapato zapato2 = new Zapato("Zapato 2", 7);
         zapato2.agregarAtaque(new PomadaWassington("Pomada Wassington"));
         Batalla batalla = new Batalla(zapato1, zapato2);
-        batalla.comenzarBatalla();
+        Referi referi = new Referi(batalla);
+
     }
 
 }
