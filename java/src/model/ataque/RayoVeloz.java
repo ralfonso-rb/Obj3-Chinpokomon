@@ -5,11 +5,12 @@ import model.chimpos.Chinpokomon;
 public class RayoVeloz extends Ataque {
 
     public RayoVeloz() {
-        super(3, "Rayo Veloz");
+        super(3, "Rayo Veloz", 1);
     }
 
     @Override
-    public void atacar(Chinpokomon chipo) {
-        chipo.recibirDanio(this.getDanio());
+    public void atacar(Chinpokomon chipo, Integer valor) {
+        chipo.recibirDanio(valor);
     }
+
 }
