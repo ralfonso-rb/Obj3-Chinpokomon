@@ -7,17 +7,16 @@ import java.util.Random;
 public class GarraMecanica extends Ataque{
 
     public GarraMecanica() {
-        super(2, "Garra Mecanica");
+        super(2, "Garra Mecanica", 2);
     }
 
-    @Override
-    public void atacar(Chinpokomon chipo) {
+    public void atacar(Chinpokomon chipo, Integer valor) {
         Random random = new Random();
         int value = random.nextInt(10 + 1) + 1;
         if (value == 1) {
             chipo.recibirDanio(chipo.getVida() / 2);
         } else {
-            chipo.recibirDanio(this.getDanio());
+            chipo.recibirDanio(valor);
         }
     }
 }
