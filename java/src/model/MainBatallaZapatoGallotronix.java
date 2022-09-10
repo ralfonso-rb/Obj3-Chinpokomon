@@ -1,7 +1,9 @@
+package model;
 import enums.TipoChinpokomon;
 import model.batalla.Batalla;
 import model.chimpos.Gallotronix;
-import model.chimpos.Zapato;
+import model.chimpos.*;
+import model.referi.Referi;
 
 public class MainBatallaZapatoGallotronix {
 
@@ -9,7 +11,8 @@ public class MainBatallaZapatoGallotronix {
         Zapato zapato = new Zapato("Zapato", 5 , TipoChinpokomon.ROBOT);
         Gallotronix gallotronix = new Gallotronix("Gallotronix", 5, TipoChinpokomon.ANIMAL);
         Batalla batalla = new Batalla(zapato, gallotronix);
-        batalla.comenzarBatalla();
+        Referi referi = new Referi(batalla);
+        referi.gestionarBatalla();
     }
 
 }
