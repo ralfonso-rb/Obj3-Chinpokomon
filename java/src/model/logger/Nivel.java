@@ -1,5 +1,5 @@
 package model.logger;
 
-enum Nivel {
+public enum Nivel {
     DEBUG, INFO, WARN, ERROR;
 }
