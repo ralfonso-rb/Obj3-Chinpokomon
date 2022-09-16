@@ -3,12 +3,12 @@ from Ataque import *
 
 class Zapatazo (Ataque):
         
-        def __init__(self, valor, nombre, valorExtra):
-            Ataque.__init__(self, valor, nombre, valorExtra)
+        def __init__(self, valor, nombre, valor_extra):
+            Ataque.__init__(self, valor, nombre, valor_extra)
         
         def atacar(self, chipo, valor):
             random = random.randint(2, 1)
             if(random == 1):
-                chipo.recibirDanio(valor * 2)
+                chipo.recibir_danio(valor * 2)
             else:
-                chipo.recibirDanio(valor)
+                chipo.recibir_danio(valor)
