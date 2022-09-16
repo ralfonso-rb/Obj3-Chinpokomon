@@ -1,9 +1,9 @@
 package model.chimpos;
 
-import enums.TipoChinpokomon;
 import model.ataque.Ataque;
 import model.ataque.CañonConico;
 import model.ataque.RayoVeloz;
+import model.tipo.TipoChinpokomon;
 
 import java.util.ArrayList;
 import java.util.Arrays;

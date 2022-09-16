@@ -1,4 +1,4 @@
-package enums;
+package model.tipo;
 
 public enum TipoChinpokomon {
     COSA,
