@@ -4,7 +4,7 @@ import model.chimpos.Chinpokomon;
 
 import java.util.Random;
 
-public class Batalla {
+public class  Batalla {
 
     private Chinpokomon chipo1;
     private Chinpokomon chipo2;
