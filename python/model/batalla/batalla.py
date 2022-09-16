@@ -1,6 +1,5 @@
 import random
 
-
 class Batalla():
     def __init__(self, chipo1, chipo2): 
         self._chipo1 = chipo1

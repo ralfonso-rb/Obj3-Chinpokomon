@@ -1,11 +1,11 @@
-package model;
-import enums.TipoChinpokomon;
+
 import model.ataque.PomadaWassington;
 import model.batalla.Batalla;
 import model.chimpos.*;
 import model.logger.Logger;
 import model.logger.Nivel;
 import model.referi.Referi;
+import model.tipo.TipoChinpokomon;
 
 public class MainBatallaZapatos {
     public static void main(String[] args) {
