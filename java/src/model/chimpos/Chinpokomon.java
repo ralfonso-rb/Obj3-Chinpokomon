@@ -2,6 +2,7 @@ package model.chimpos;
 
 import enums.TipoChinpokomon;
 import model.ataque.Ataque;
+import model.logger.Logger;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -51,7 +52,6 @@ public abstract class Chinpokomon {
 
     public void setTipo(TipoChinpokomon tipo) { this.tipo = tipo; }
 
-
     public List<Ataque> getAtaques() {
         return ataques;
     }
@@ -72,7 +72,7 @@ public abstract class Chinpokomon {
         Random random = new Random();
         Ataque arma = ataques.get(random.nextInt(ataques.size()));
         if(!this.estaMuerto()) {
-            System.out.println(this.getNombre() + " ataca con " + arma.getNombre());
+            Logger.getInstance().info(this.getNombre() + " ataca con " + arma.getNombre() + " a " + chipo.getNombre());
             arma.atacar(chipo);
         }
     }
@@ -92,12 +92,12 @@ public abstract class Chinpokomon {
         else {
             this.setVida(0);
         }
-        System.out.println(this.getNombre() + " recibio danio " + danio + ", le queda " + this.getVida() + " de vida");
+        Logger.getInstance().info(this.getNombre() + " recibio danio " + danio + ", le queda " + this.getVida() + " de vida");
     }
 
     public void agregarVida(Integer vida) {
         this.setVida(this.getVida() + vida);
-        System.out.println(this.getNombre() + " recibio vida " + vida + ", le queda " + this.getVida() + " de vida");
+        Logger.getInstance().info(this.getNombre() + " recibio vida " + vida + ", le queda " + this.getVida() + " de vida");
     }
 
     public boolean tieneVentajaSobre(Chinpokomon chipo) {

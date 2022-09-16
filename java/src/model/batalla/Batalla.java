@@ -1,6 +1,7 @@
 package model.batalla;
 
 import model.chimpos.Chinpokomon;
+import model.logger.Logger;
 
 import java.util.Random;
 
@@ -39,23 +40,23 @@ public class Batalla {
 
     private void verificarMuertos() {
         if(chipo1.estaMuerto()) {
-            System.out.println(chipo1.getNombre() + " se murio");
+            Logger.getInstance().info(chipo1.getNombre() + " se murio");
         }
         else if (chipo2.estaMuerto()) {
-            System.out.println(chipo2.getNombre() + " se murio");
+            Logger.getInstance().info(chipo2.getNombre() + " se murio");
         }
         else {
-            System.out.println("LA BATALLA SIGUE");
+            Logger.getInstance().info("La batalla entre " + chipo1.getNombre() + " y " + chipo2.getNombre() + " continua");
         }
     }
 
     private Chinpokomon printGanador() {
         if(!this.chipo1.estaMuerto()) {
-            System.out.println(chipo1.getNombre() + " ES EL GANADOR");
+            Logger.getInstance().info(chipo1.getNombre() + " ES EL GANADOR");
             return chipo1;
         }
         else {
-            System.out.println(chipo2.getNombre() + " ES EL GANADOR!");
+            Logger.getInstance().info(chipo2.getNombre() + " ES EL GANADOR!");
             return chipo2;
         }
     }
