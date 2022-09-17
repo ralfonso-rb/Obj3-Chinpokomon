@@ -7,7 +7,7 @@ from model.batalla.batalla import Batalla
 from model.referi.referi import Referi
 
 
-logger = Logger(Nivel.INFO)
+Logger.instance(Nivel.INFO)
 gallotronix = Gallotronix("Gallotronix", 5, TiposDeChipos.ROBOT)
 carnotron = Carnotron("Carnotron", 6, TiposDeChipos.ANIMAL)
 batalla = Batalla(carnotron, gallotronix)

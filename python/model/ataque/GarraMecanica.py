@@ -3,10 +3,10 @@ from random import randint
 
 class GarraMecanica(Ataque):
         
-        def __init__(self, valor, nombre, valor_extra):
-            Ataque.__init__(self, valor, nombre, valor_extra)
+        def __init__(self):
+            Ataque.__init__(self, 2, "Garra Mecanica", 2)
     
-        def atacar(self, chipo, valor): 
+        def atacar_con_valor(self, chipo, valor): 
             random = randint(1, 10)  
             if(random == 1):
                 chipo.recibir_danio(chipo.vida / 2)
