@@ -1,5 +1,5 @@
-from Ataque import *
-import random
+from model.ataque.Ataque import Ataque
+from random import randint
 
 class GarraMecanica(Ataque):
         
@@ -7,8 +7,8 @@ class GarraMecanica(Ataque):
             Ataque.__init__(self, valor, nombre, valor_extra)
     
         def atacar(self, chipo, valor): 
-            random = random.randint(10, 1)  
+            random = randint(1, 10)  
             if(random == 1):
-                chipo.recibir_danio(chipo.get_vida() / 2)
+                chipo.recibir_danio(chipo.vida / 2)
             else:
                 chipo.recibir_danio(valor)

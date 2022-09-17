@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public abstract class Chinpokomon {
+public class Chinpokomon {
     String nombre;
     Integer nivel;
     Integer vida;

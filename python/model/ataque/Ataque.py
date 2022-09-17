@@ -31,7 +31,7 @@ class Ataque(object):
         self.nombre = nombre
     
     def atacar(self, chipo):
-        if(chipo.get_oponente().tiene_ventaja_sobre(chipo)):
+        if(chipo.oponente.tiene_ventaja_sobre(chipo)):
             self.atacar(chipo, self.valor + self.valor_extra)
         else:
             self.atacar(chipo, self.valor)

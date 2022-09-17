@@ -1,5 +1,5 @@
-from random import random
-from Ataque import *
+from random import randint
+from model.ataque.Ataque import Ataque
 
 class Zapatazo (Ataque):
         
@@ -7,7 +7,7 @@ class Zapatazo (Ataque):
             Ataque.__init__(self, valor, nombre, valor_extra)
         
         def atacar(self, chipo, valor):
-            random = random.randint(2, 1)
+            random = randint(1, 2)
             if(random == 1):
                 chipo.recibir_danio(valor * 2)
             else:

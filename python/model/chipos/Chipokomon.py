@@ -64,7 +64,7 @@ class Chipokomon(object):
         self.tipo == chipo.tipo.ANIMAL and chipo.tipo == chipo.tipo.COSA or
         self.tipo == chipo.tipo.COSA and chipo.tipo == chipo.tipo.ROBOT)
 
-    def estaMuerto(self):
+    def esta_muerto(self):
         return self.vida <= 0
 
     def recibir_danio(self, danio):

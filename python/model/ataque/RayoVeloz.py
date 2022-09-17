@@ -1,4 +1,4 @@
-from Ataque import *
+from model.ataque.Ataque import Ataque
 
 class RayoVeloz(Ataque):
         

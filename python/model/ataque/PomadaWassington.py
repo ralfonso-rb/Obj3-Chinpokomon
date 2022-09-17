@@ -1,4 +1,4 @@
-from Ataque import *
+from model.ataque.Ataque import Ataque
 
 class PomadaWassington(Ataque):
         
@@ -6,4 +6,4 @@ class PomadaWassington(Ataque):
             Ataque.__init__(self, valor, nombre, valor_extra)
         
         def atacar(self, chipo, valor):
-            chipo.get_oponente().agregar_vida(valor)
+            chipo.oponente.agregar_vida(valor)

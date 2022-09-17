@@ -1,4 +1,4 @@
-from batalla import *
+from model.batalla.batalla import Batalla
 
 class Referi ():
     def __init__(self, batalla):

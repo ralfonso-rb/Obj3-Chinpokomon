@@ -1,12 +1,12 @@
-import random
+from random import randint
 
 class Batalla():
     def __init__(self, chipo1, chipo2): 
         self._chipo1 = chipo1
         self._chipo2 = chipo2
-        self.set_turnos(chipo1, chipo2)
-        chipo1.set_oponente(chipo2)
-        chipo2.set_oponente(chipo1)
+        # self.set_turnos(chipo1, chipo2)
+        # chipo1.oponente(chipo2)
+        # chipo2.oponente(chipo1)
     
     @property
     def chipo1(self):
@@ -25,15 +25,18 @@ class Batalla():
         self._chipo2 = chipo2
     
     def set_turnos(self, chipo1, chipo2):
-        random = random.randint(2, 1)
+        random = randint(1,2)
         if(random == 1):
-            chipo1 = chipo1
-            chipo2 = chipo2
+            self.chipo1(chipo1)
+            self.chipo2(chipo2)
         else:
-            chipo2 = chipo1
-            chipo1 = chipo2
+            self.chipo2(chipo1)
+            self.chipo1(chipo2)
     
     def comenzar_batalla(self):
+        self.set_turnos(self.chipo1, self.chipo2)
+        self.chipo1.oponente(self.chipo2)
+        self.chipo2.oponente(self.chipo1)
         while(self.sigue_alguno_con_vida(self.chipo1, self.chipo2)):
             self.chipo1.atacar(self.chipo2)
             self.chipo2.atacar(self.chipo1)
