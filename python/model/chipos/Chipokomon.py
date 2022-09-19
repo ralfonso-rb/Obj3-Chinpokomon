@@ -58,6 +58,9 @@ class Chipokomon(object):
     def oponente(self, oponente):
         self._oponente = oponente
 
+    def agregarAtaque(self, ataque):
+        self.ataques.append(ataque)
+
     def tiene_ventaja_sobre(self, chipo):
         return (self.tipo == chipo.tipo.ROBOT and chipo.tipo == chipo.tipo.ANIMAL or
         self.tipo == chipo.tipo.ANIMAL and chipo.tipo == chipo.tipo.COSA or
@@ -74,7 +77,7 @@ class Chipokomon(object):
         Logger.instance().info(str(self.nombre) + ' recibio ' + str(danio) + ' de danio')
 
     def agregar_vida(self, vida):
-        self.vida(self.vida + vida)
+        self.vida = self.vida + vida
         Logger.instance().info(self.nombre + ' gano ' + str(vida) + ' de vida')
 
     def atacar(self, chipo):
