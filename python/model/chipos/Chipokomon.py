@@ -1,6 +1,5 @@
-from logging import Logger
-from random import random
-
+from random import randint
+from model.logger.logger import Logger
 
 class Chipokomon(object):
     def __init__(self, nombre, nivel, vida, ataques, tipo):
@@ -69,18 +68,19 @@ class Chipokomon(object):
 
     def recibir_danio(self, danio):
         if(self.vida - danio > 0):
-            self.vida(self.vida - danio)
+            self.vida = self.vida - danio
         else:
-            self.vida(0)
-        Logger.get_instance().info("El chipokomon " + self.nombre + " recibio " + str(danio) + " de danio")
+            self.vida = 0
+        Logger.instance().info(str(self.nombre) + ' recibio ' + str(danio) + ' de danio')
 
     def agregar_vida(self, vida):
         self.vida(self.vida + vida)
-        Logger.get_instance().info("El chipokomon " + self.nombre + " gano " + str(vida) + " de vida")
+        Logger.instance().info(self.nombre + ' gano ' + str(vida) + ' de vida')
 
     def atacar(self, chipo):
-        random = random.randint(0, len(self.ataques) - 1)
-        if(not self.estaMuerto()):
-            Logger.get_instance().info("El chipokomon " + self.nombre + " ataco a " + chipo.nombre)
-            self.ataques[random].atacar(chipo)
+        random = randint(0, len(self.ataques) - 1)
+        if(not chipo.esta_muerto()):
+            ataque = self.ataques[random]
+            Logger.instance().info(self.nombre + ' ataco a ' + chipo.nombre + ' con ' + str(ataque.nombre))
+            ataque.atacar(chipo)
             

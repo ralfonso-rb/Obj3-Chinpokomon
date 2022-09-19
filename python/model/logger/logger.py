@@ -1,20 +1,18 @@
 from model.logger.nivel import Nivel
 
-def singleton(cls):
+class Logger():
 
-    instances = dict()
+    _instance = None
 
-    def wrap(*args, **kwargs):
-        if cls not in instances:
-            instances[cls] = cls(*args, **kwargs)
+    def __init__(self):
+        raise("Call instance(Nivel value) to create Logger")
 
-    return wrap
-
-@singleton
-class Logger(object):
-
-    def __init__(self, nivel=Nivel.INFO):
-        self._nivel = nivel
+    @classmethod
+    def instance(cls, nivel=Nivel.INFO):
+        if cls._instance is None:
+            cls._instance = cls.__new__(cls)
+            cls._nivel = nivel
+        return cls._instance
 
     @property
     def nivel(self):
